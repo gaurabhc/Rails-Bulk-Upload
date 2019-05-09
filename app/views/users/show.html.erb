@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+	<strong>ID:</strong>
+	<%= @user.id %>
+</p>
+
+<p>
+	<strong>Balance:</strong>
+	<%= @user.balance %>
+	<button>Add Balance</button>
+	<div id="updatebalance">
+		<h3>Update Balance</h3>
+		<%= form_for(@user) do |f| %>
+
+			<%= f.label :balance %>
+			<%= f.text_field :balance, class: 'form-control' %>
+
+
+			<%= f.submit "Save changes", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</p>
+
+<script type="text/javascript">
+$("button").click(function(){
+    $("updatebalance").hide(1000);
+});
+</script>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
