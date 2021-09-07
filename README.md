@@ -1,3 +1,3 @@
 
-Test Application for uploading objects to db with csv
+Application for uploading objects in bulk to db with csv
 
